@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0fc7e5f9.css",
+    "main.js": "/static/js/main.1953a230.js",
+    "static/media/Onest-Bold.woff": "/static/media/Onest-Bold.bd089bf0181ed81ce177.woff",
+    "static/media/Onest-Regular.woff": "/static/media/Onest-Regular.f8333fbf2427efcc2fe8.woff",
+    "index.html": "/index.html",
+    "main.0fc7e5f9.css.map": "/static/css/main.0fc7e5f9.css.map",
+    "main.1953a230.js.map": "/static/js/main.1953a230.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fc7e5f9.css",
+    "static/js/main.1953a230.js"
+  ]
+}
