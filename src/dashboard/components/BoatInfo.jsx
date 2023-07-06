@@ -3,7 +3,7 @@ import { Button, Container } from "react-bootstrap";
 export default function BoatInfo() {
   return (
     <Container className="mt-3">
-      <h3>Информацая о судне</h3>
+      <h3>Информация о судне</h3>
       <ul>
         <li>
           <strong>Название:</strong> Тестовое судно
