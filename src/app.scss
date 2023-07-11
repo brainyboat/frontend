@@ -1,0 +1,50 @@
+$enable-rounded: false;
+$primary: #2462c0;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: "onest";
+    src: url("assets/fonts/Onest-Regular.woff") format("woff2");
+}
+@font-face {
+    font-family: "onest";
+    src: url("assets/fonts/Onest-Bold.woff") format("woff2");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "onest";
+    src: url("assets/fonts/Onest-Medium.woff") format("woff2");
+    font-weight: 500;
+}
+
+body {
+    font-family: "Onest";
+    overflow: hidden;
+}
+
+.splitpanes.default-theme {
+    .splitpanes__pane {
+        background-color: #0000 !important;
+    }
+    .splitpanes__splitter {
+        background-color: #f2f2f2 !important;
+        &:before,
+        &:after {
+            background-color: #fff !important;
+        }
+        &:hover {
+            background-color: #2462c0 !important;
+        }
+    }
+}
+
+// dark mode for tiles
+// .leaflet-tile-pane img {
+//     filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !important;
+// }
+
+.leaflet-div-icon {
+    background-color: transparent !important;
+    border: none !important;
+}
