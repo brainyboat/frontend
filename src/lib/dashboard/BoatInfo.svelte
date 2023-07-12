@@ -18,8 +18,8 @@
   <h3 class="tw-medium">Телеметрия</h3>
   <ul>
     <li>Дата: {telemetry.datetime}</li>
-    <li>Широта: {telemetry.latitude}°</li>
-    <li>Долгота: {telemetry.longitude}°</li>
+    <li>Широта: {telemetry.latitude.toFixed(3)}°</li>
+    <li>Долгота: {telemetry.longitude.toFixed(3)}°</li>
     <li>Внутренняя температура: {telemetry.temperature}°C</li>
     <li>Курс (отн. севера): {telemetry.angle}°</li>
     <li>Ср. скорость: {telemetry.velocity} км/ч</li>

@@ -24,7 +24,7 @@
   }
 
   export function goTo(latlng: LatLng) {
-    map.getMap().flyTo(latlng, 6, {
+    map.getMap().flyTo(latlng, 16, {
       duration: 1,
     });
   }
