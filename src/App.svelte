@@ -1,5 +1,7 @@
 <script>
-  import Dashboard from "./lib/dashboard/Dashboard.svelte";
+  import Router from "./lib/Router.svelte";
+  import { SvelteToast } from "@zerodevx/svelte-toast";
 </script>
 
-<Dashboard />
+<SvelteToast />
+<Router />

@@ -9,10 +9,15 @@
     DropdownMenu,
     DropdownItem,
   } from "sveltestrap";
+  import { token } from "../auth/storage";
+
+  function signOut() {
+    $token = null;
+  }
 </script>
 
 <Navbar color="light" light class="py-2 border">
-  <NavbarBrand>
+  <NavbarBrand href="#/">
     <svg
       style="margin-bottom: 4px; margin-right: .5rem"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,14 +33,13 @@
   </NavbarBrand>
   <Nav class="ms-auto" navbar>
     <Dropdown nav>
-      <DropdownToggle nav caret>
+      <DropdownToggle class="btn-light" caret>
         <PersonFill width={20} height={20} />
         <DropdownMenu class="position-absolute shadow" end>
-          <DropdownItem header>admin@mail.ru</DropdownItem>
           <DropdownItem>Личный кабинет</DropdownItem>
           <DropdownItem>Настройки</DropdownItem>
           <DropdownItem divider />
-          <DropdownItem>Выйти из аккаунта</DropdownItem>
+          <DropdownItem on:click={signOut}>Выйти из аккаунта</DropdownItem>
         </DropdownMenu>
       </DropdownToggle>
     </Dropdown>

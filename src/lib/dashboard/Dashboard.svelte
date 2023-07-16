@@ -6,6 +6,10 @@
   import BoatList from "./BoatList.svelte";
   import { fade } from "svelte/transition";
   import BoatInfo from "./BoatInfo.svelte";
+  import { replace } from "svelte-spa-router";
+  import { token } from "../auth/storage";
+
+  $: if ($token === null) replace("#/login");
 
   let map: Map;
   let data: ShipData;
@@ -157,14 +161,14 @@
 
 {#await getShips}
   <div
-    transition:fade
+    in:fade
     class="vh-100 d-flex flex-column justify-content-center align-items-center"
   >
     <p>Загрузка...</p>
     <Spinner />
   </div>
 {:then _}
-  <div transition:fade>
+  <div in:fade>
     <Splitpanes
       on:ready={() => setTimeout(map.updateSize, 0)}
       on:resize={map.updateSize}

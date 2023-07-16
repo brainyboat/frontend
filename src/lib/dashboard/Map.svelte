@@ -37,7 +37,6 @@
   <TileLayer url={tileUrl} options={tileLayerOptions} />
   {#each entries as entry}
     {#each entry.telemetry as telemetry, i}
-      >
       <TelemetryMarker
         on:click={() =>
           dispatch("telemetrySelect", {
