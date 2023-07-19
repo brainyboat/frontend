@@ -51,7 +51,11 @@
 <div in:fade class="vh-100 d-flex justify-content-center align-items-center bg">
   <div class="p-5 shadow bg-white">
     <h1 class="h3 mb-4 fw-normal text-center">Вход в аккаунт</h1>
-    <Form>
+    <Form
+      on:submit={(event) => {
+        event.preventDefault();
+      }}
+    >
       <FormGroup floating label="Имя пользователя">
         <Input bind:value={username} placeholder="Введите значение" />
       </FormGroup>
@@ -62,7 +66,9 @@
           placeholder="Введите значение"
         />
       </FormGroup>
-      <Button color="primary" class="w-100" on:click={submit}>Войти</Button>
+      <Button type="submit" color="primary" class="w-100" on:click={submit}
+        >Войти</Button
+      >
     </Form>
   </div>
 </div>
