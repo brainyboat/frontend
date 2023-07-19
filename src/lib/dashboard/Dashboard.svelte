@@ -16,6 +16,11 @@
   let selectedTelemetry = null;
 
   function handleEntrySelect(event): void {
+    selectedTelemetry = {
+      isShip: true,
+      ship: event.detail.ship,
+      telemetry: event.detail.telemetry[0],
+    };
     map.goTo([
       event.detail.telemetry[0].latitude,
       event.detail.telemetry[0].longitude,
