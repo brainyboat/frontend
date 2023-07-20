@@ -9,6 +9,7 @@
     center: [40, 90],
     zoom: 3,
     attributionControl: false,
+    preferCanvas: true,
   };
   const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   const tileLayerOptions = {

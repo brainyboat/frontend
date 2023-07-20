@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { CircleFill } from "svelte-bootstrap-icons";
-  import { Marker, DivIcon } from "svelte-leafletjs";
+  import { Marker, DivIcon, CircleMarker } from "svelte-leafletjs";
   import { Tooltip } from "sveltestrap";
 
   const dispatch = createEventDispatcher();
@@ -11,12 +11,12 @@
   export let last: boolean;
 </script>
 
-<Marker
-  events={["click"]}
-  on:click={() => dispatch("click")}
-  latLng={[telemetry.latitude, telemetry.longitude]}
->
-  {#if last}
+{#if last}
+  <Marker
+    events={["click"]}
+    on:click={() => dispatch("click")}
+    latLng={[telemetry.latitude, telemetry.longitude]}
+  >
     <DivIcon options={{ iconSize: [32, 32] }}>
       <svg
         id={`boat-${ship.id}`}
@@ -33,10 +33,18 @@
         />
       </svg>
     </DivIcon>
-  {:else}
-    <DivIcon options={{ iconSize: [16, 16], iconAnchor: [8, 8] }}>
-      <CircleFill fill={ship.color} width={16} height={16} />
-    </DivIcon>
-  {/if}
-  <Tooltip target={`boat-${ship.id}`}>{ship.name}</Tooltip>
-</Marker>
+    <Tooltip target={`boat-${ship.id}`}>{ship.name}</Tooltip>
+  </Marker>
+{:else}
+  <CircleMarker
+    latLng={[telemetry.latitude, telemetry.longitude]}
+    fillColor={ship.color}
+    fillOpacity={0.5}
+    radius={6}
+    events={["click"]}
+    on:click={() => dispatch("click")}
+    options={{
+      stroke: false,
+    }}
+  />
+{/if}
